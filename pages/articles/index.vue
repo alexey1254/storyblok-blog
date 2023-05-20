@@ -3,12 +3,12 @@
 </template>
 
 <script setup>
-const story = await useAsyncStoryblok("/articles/", {
+const story = await useAsyncStoryblok("articles/", {
   version: "draft",
 });
 
 let $storyapi = useStoryblokApi();
-const res = await $storyapi.get("/cdn/stories/", {
+const res = await $storyapi.get("cdn/stories/", {
   starts_with: "articles/",
 });
 

@@ -26,3 +26,6 @@ useHead({
   meta: createSEOMeta({ description: prop.blok.description }),
 });
 </script>
+
+<style scoped>
+</style>

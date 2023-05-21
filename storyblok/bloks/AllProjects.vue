@@ -1,10 +1,10 @@
 <template>
   <div
     v-editable="projects"
-    class="grid grid-cols-1 md:grid-cols-3 items-start justify-center"
+    class="grid grid-cols-1 gap-3 md:grid-cols-3 items-start justify-center"
   >
     <ArticleCard
-      class="mt-2"
+      class="m-3 min-h-full min-w-fit"
       v-for="project in projects"
       :is="project?.content.component"
       :key="project.uuid"

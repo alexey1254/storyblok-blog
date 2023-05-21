@@ -30,13 +30,13 @@ import kebabCase from "lodash/kebabCase";
 const params = useRoute().params; // Guarda la ruta completa actual
 const storyblokApi = useStoryblokApi();
 
-const { data: tagsData } = await storyblokApi.get("cdn/tags/");
+const { data: tagsData } = await storyblokApi.get("cdn/tags");
 const topic = tagsData.tags.find((t) => kebabCase(t.name) === params.slug[0]);
 
 // Fetch articles
 const { data: articlesData } = await storyblokApi.get("cdn/stories", {
   starts_with: "articles/",
-  resolve_relations: "author",
+  resolve_relations: "article.author",
   with_tag: topic.name,
 });
 const articles = articlesData.stories.map((story) => {
@@ -45,7 +45,7 @@ const articles = articlesData.stories.map((story) => {
 });
 
 useHead({
-  title: topic.name,
+  titleTemplate:`Artículos - ${topic.name}`
 });
 </script>
 <style scoped></style>

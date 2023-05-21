@@ -11,7 +11,7 @@ export const createSEOMeta = (data) => [
   {
     hid: "og:url",
     property: "og:url",
-    content: "localhost" + "/" + data.url,
+    content: "https://nuxt-storyblog.netlify.app" + "/" + data.url,
   },
   {
     hid: "twitter:card",
